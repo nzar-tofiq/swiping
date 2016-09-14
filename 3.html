@@ -54,9 +54,11 @@
 		<script>
 			$(document).ready(function() {
 				$('body').hammer().bind('swiperight', function(e) {
+					e.preventDefault();
 					$('.next a')[0].click();
 				});
 				$('body').hammer().bind('swipeleft', function(e) {
+					e.preventDefault();
 					$('.prev a')[0].click();
 				});
 			});
