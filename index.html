@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<script src="jquery.js"></script>
+		<script src="jquery.hammer.min.js"></script>
+	</head>
+
+	<body>
+		<style media="screen">
+			.poster {
+				border: thin black solid;
+				height: 600px;
+				width: 450px;
+				position: relative;
+				background: lime;
+			}
+
+			.prev,
+			.next {
+				text-align: center;
+				background: teal;
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+				padding: 5px;
+				width: 3em;
+			}
+
+			.next {
+				left: 368px;
+			}
+
+			a {
+				font-size: 1.3em;
+				color: #FFF;
+				text-decoration: none;
+			}
+		</style>
+		<div class="poster">
+
+			<div class="prev">
+				<a href="3.html">prev</a>
+			</div>
+
+
+			<div class="next">
+				<a href="1.html">next</a>
+			</div>
+
+		</div>
+		<script>
+			$(document).ready(function() {
+				$('body').hammer().bind('swiperight', function(e) {
+					$('.next a')[0].click();
+				});
+				$('body').hammer().bind('swipeleft', function(e) {
+					$('.prev a')[0].click();
+				});
+			});
+		</script>
+	</body>
+
+</html>
